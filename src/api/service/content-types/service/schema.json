@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "posts",
+  "collectionName": "services",
   "info": {
-    "singularName": "post",
-    "pluralName": "posts",
-    "displayName": "Post",
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Talleres",
     "description": ""
   },
   "options": {
