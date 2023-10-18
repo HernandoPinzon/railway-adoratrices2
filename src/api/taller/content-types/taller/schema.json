@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "services",
+  "collectionName": "talleres",
   "info": {
-    "singularName": "service",
-    "pluralName": "services",
-    "displayName": "Servicios",
-    "description": ""
+    "singularName": "taller",
+    "pluralName": "talleres",
+    "displayName": "Talleres"
   },
   "options": {
     "draftAndPublish": true
@@ -21,7 +20,7 @@
     "image": {
       "type": "string"
     },
-    "descripton": {
+    "description": {
       "type": "text"
     }
   }
