@@ -741,7 +741,7 @@ export interface ApiTallerTaller extends Schema.CollectionType {
   info: {
     singularName: 'taller';
     pluralName: 'talleres';
-    displayName: 'Taller';
+    displayName: 'Talleres';
   };
   options: {
     draftAndPublish: true;
