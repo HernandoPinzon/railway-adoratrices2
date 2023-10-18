@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "womens_records",
+  "info": {
+    "singularName": "womens-record",
+    "pluralName": "womens-records",
+    "displayName": "Registro de mujeres"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Nombres": {
+      "type": "string"
+    },
+    "Apellidos": {
+      "type": "string"
+    },
+    "cedula": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "edad": {
+      "type": "integer"
+    },
+    "fechaNacimiento": {
+      "type": "date"
+    },
+    "numeroHijos": {
+      "type": "integer"
+    }
+  }
+}
