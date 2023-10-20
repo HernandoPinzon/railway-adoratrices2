@@ -677,6 +677,39 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiDatacontactDatacontact extends Schema.SingleType {
+  collectionName: 'datacontacts';
+  info: {
+    singularName: 'datacontact';
+    pluralName: 'datacontacts';
+    displayName: 'datacontact';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    telefono: Attribute.String;
+    celular: Attribute.String;
+    direccion: Attribute.String;
+    correo: Attribute.Email;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::datacontact.datacontact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::datacontact.datacontact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiPostPost extends Schema.CollectionType {
   collectionName: 'posts';
   info: {
@@ -774,7 +807,7 @@ export interface ApiWomensRecordWomensRecord extends Schema.CollectionType {
   info: {
     singularName: 'womens-record';
     pluralName: 'womens-records';
-    displayName: 'Registro mujeres';
+    displayName: 'Registro de mujeres';
   };
   options: {
     draftAndPublish: true;
@@ -822,6 +855,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::datacontact.datacontact': ApiDatacontactDatacontact;
       'api::post.post': ApiPostPost;
       'api::service.service': ApiServiceService;
       'api::taller.taller': ApiTallerTaller;
