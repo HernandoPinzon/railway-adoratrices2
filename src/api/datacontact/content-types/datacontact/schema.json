@@ -1,0 +1,27 @@
+{
+  "kind": "singleType",
+  "collectionName": "datacontacts",
+  "info": {
+    "singularName": "datacontact",
+    "pluralName": "datacontacts",
+    "displayName": "datacontact"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "telefono": {
+      "type": "string"
+    },
+    "celular": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "email"
+    }
+  }
+}
