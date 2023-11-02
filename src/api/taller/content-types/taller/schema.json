@@ -4,7 +4,8 @@
   "info": {
     "singularName": "taller",
     "pluralName": "talleres",
-    "displayName": "Talleres"
+    "displayName": "Talleres",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,9 +14,6 @@
   "attributes": {
     "title": {
       "type": "string"
-    },
-    "content": {
-      "type": "richtext"
     },
     "image": {
       "type": "string"

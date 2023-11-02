@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entidads",
+  "info": {
+    "singularName": "entidad",
+    "pluralName": "entidads",
+    "displayName": "Entidades",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Benefactor",
+        "Alianza"
+      ]
+    }
+  }
+}

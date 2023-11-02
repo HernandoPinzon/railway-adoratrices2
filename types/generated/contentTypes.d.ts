@@ -682,7 +682,8 @@ export interface ApiDatacontactDatacontact extends Schema.SingleType {
   info: {
     singularName: 'datacontact';
     pluralName: 'datacontacts';
-    displayName: 'datacontact';
+    displayName: 'Informacion de contacto';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -703,6 +704,39 @@ export interface ApiDatacontactDatacontact extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::datacontact.datacontact',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEntidadEntidad extends Schema.CollectionType {
+  collectionName: 'entidads';
+  info: {
+    singularName: 'entidad';
+    pluralName: 'entidads';
+    displayName: 'Entidades';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String;
+    image: Attribute.String;
+    type: Attribute.Enumeration<['Benefactor', 'Alianza']>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::entidad.entidad',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::entidad.entidad',
       'oneToOne',
       'admin::user'
     > &
@@ -775,13 +809,13 @@ export interface ApiTallerTaller extends Schema.CollectionType {
     singularName: 'taller';
     pluralName: 'talleres';
     displayName: 'Talleres';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
-    content: Attribute.RichText;
     image: Attribute.String;
     description: Attribute.Text;
     createdAt: Attribute.DateTime;
@@ -856,6 +890,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
       'api::datacontact.datacontact': ApiDatacontactDatacontact;
+      'api::entidad.entidad': ApiEntidadEntidad;
       'api::post.post': ApiPostPost;
       'api::service.service': ApiServiceService;
       'api::taller.taller': ApiTallerTaller;
