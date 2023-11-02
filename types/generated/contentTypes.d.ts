@@ -842,22 +842,59 @@ export interface ApiWomensRecordWomensRecord extends Schema.CollectionType {
     singularName: 'womens-record';
     pluralName: 'womens-records';
     displayName: 'Registro de mujeres';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     Nombres: Attribute.String;
     Apellidos: Attribute.String;
-    cedula: Attribute.String;
+    documento: Attribute.String;
     estado: Attribute.String;
     telefono: Attribute.String;
     edad: Attribute.Integer;
     fechaNacimiento: Attribute.Date;
     numeroHijos: Attribute.Integer;
+    lugarNacimento: Attribute.String;
+    barrio: Attribute.String;
+    estrato: Attribute.Integer;
+    estadoCivil: Attribute.Enumeration<
+      ['union libre', 'soltera', 'casada', 'viuda']
+    >;
+    escolaridad: Attribute.String;
+    ocupacionActual: Attribute.String;
+    religion: Attribute.String;
+    sacramentos: Attribute.String;
+    antecedentesSpa: Attribute.Enumeration<['SI', 'NO']>;
+    otroConsumo: Attribute.String;
+    discapacidad: Attribute.String;
+    RLCPD: Attribute.Enumeration<['SI', 'NO']>;
+    certificadoDiscapacidad: Attribute.String;
+    victimaConflictoArmado: Attribute.Enumeration<['SI', 'NO']>;
+    registroUnicoVictimas: Attribute.Enumeration<['SI', 'NO']>;
+    victimaViolencia: Attribute.Enumeration<['SI', 'NO']>;
+    cualViolencia: Attribute.String;
+    activacionRuta: Attribute.Enumeration<['SI', 'NO']>;
+    programasGubernamentales: Attribute.String;
+    eps: Attribute.String;
+    regimen: Attribute.Enumeration<['subsidiado', 'contributivo']>;
+    sisben: Attribute.Enumeration<['SI', 'NO']>;
+    tipoVivienda: Attribute.String;
+    tenenciaVivienda: Attribute.String;
+    serviciosPublicos: Attribute.String;
+    comoSeEnteroCentroDeFormacion: Attribute.String;
+    talleresRealizados: Attribute.String;
+    tallerAlQueSeMatricula: Attribute.String;
+    fotografia: Attribute.String;
+    fotocopiaDocumento: Attribute.String;
+    pagoMatricula: Attribute.String;
+    abono: Attribute.String;
+    observaciones: Attribute.Text;
+    rangoEdadHijos: Attribute.String;
+    matriculadaPor: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::womens-record.womens-record',
       'oneToOne',

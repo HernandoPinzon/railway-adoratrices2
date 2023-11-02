@@ -4,10 +4,11 @@
   "info": {
     "singularName": "womens-record",
     "pluralName": "womens-records",
-    "displayName": "Registro de mujeres"
+    "displayName": "Registro de mujeres",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,7 +18,7 @@
     "Apellidos": {
       "type": "string"
     },
-    "cedula": {
+    "documento": {
       "type": "string"
     },
     "estado": {
@@ -34,6 +35,149 @@
     },
     "numeroHijos": {
       "type": "integer"
+    },
+    "lugarNacimento": {
+      "type": "string"
+    },
+    "barrio": {
+      "type": "string"
+    },
+    "estrato": {
+      "type": "integer"
+    },
+    "estadoCivil": {
+      "type": "enumeration",
+      "enum": [
+        "union libre",
+        "soltera",
+        "casada",
+        "viuda"
+      ]
+    },
+    "escolaridad": {
+      "type": "string"
+    },
+    "ocupacionActual": {
+      "type": "string"
+    },
+    "religion": {
+      "type": "string"
+    },
+    "sacramentos": {
+      "type": "string"
+    },
+    "antecedentesSpa": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "otroConsumo": {
+      "type": "string"
+    },
+    "discapacidad": {
+      "type": "string"
+    },
+    "RLCPD": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "certificadoDiscapacidad": {
+      "type": "string"
+    },
+    "victimaConflictoArmado": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "registroUnicoVictimas": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "victimaViolencia": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "cualViolencia": {
+      "type": "string"
+    },
+    "activacionRuta": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "programasGubernamentales": {
+      "type": "string"
+    },
+    "eps": {
+      "type": "string"
+    },
+    "regimen": {
+      "type": "enumeration",
+      "enum": [
+        "subsidiado",
+        "contributivo"
+      ]
+    },
+    "sisben": {
+      "type": "enumeration",
+      "enum": [
+        "SI",
+        "NO"
+      ]
+    },
+    "tipoVivienda": {
+      "type": "string"
+    },
+    "tenenciaVivienda": {
+      "type": "string"
+    },
+    "serviciosPublicos": {
+      "type": "string"
+    },
+    "comoSeEnteroCentroDeFormacion": {
+      "type": "string"
+    },
+    "talleresRealizados": {
+      "type": "string"
+    },
+    "tallerAlQueSeMatricula": {
+      "type": "string"
+    },
+    "fotografia": {
+      "type": "string"
+    },
+    "fotocopiaDocumento": {
+      "type": "string"
+    },
+    "pagoMatricula": {
+      "type": "string"
+    },
+    "abono": {
+      "type": "string"
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "rangoEdadHijos": {
+      "type": "string"
+    },
+    "matriculadaPor": {
+      "type": "string"
     }
   }
 }
