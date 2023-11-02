@@ -1,45 +1,28 @@
-# syntax = docker/dockerfile:1
+# Creating multi-stage build for production
+FROM node:18-alpine AS build
+RUN apk update && apk add --no-cache build-base gcc autoconf automake zlib-dev libpng-dev vips-dev git > /dev/null 2>&1
+ENV NODE_ENV=production
 
-# Adjust NODE_VERSION as desired
-ARG NODE_VERSION=18.17.1
-FROM node:${NODE_VERSION}-slim as base
+WORKDIR /opt/
+COPY package.json yarn.lock ./
+RUN yarn global add node-gyp
+RUN yarn config set network-timeout 600000 -g && yarn install --production
+ENV PATH /opt/node_modules/.bin:$PATH
+WORKDIR /opt/app
+COPY . .
+RUN yarn build
 
-LABEL fly_launch_runtime="Node.js"
+# Creating final production image
+FROM node:18-alpine
+RUN apk add --no-cache vips-dev
+ENV NODE_ENV=production
+WORKDIR /opt/
+COPY --from=build /opt/node_modules ./node_modules
+WORKDIR /opt/app
+COPY --from=build /opt/app ./
+ENV PATH /opt/node_modules/.bin:$PATH
 
-# Node.js app lives here
-WORKDIR /app
-
-# Set production environment
-ENV NODE_ENV="production"
-
-
-# Throw-away build stage to reduce size of final image
-FROM base as build
-
-# Install packages needed to build node modules
-RUN apt-get update -qq && \
-    apt-get install -y build-essential pkg-config python-is-python3
-
-# Install node modules
-COPY --link package.json yarn.lock ./
-RUN yarn install --frozen-lockfile --production=false
-
-# Copy application code
-COPY --link . .
-
-# Build application
-RUN yarn run build
-
-# Remove development dependencies
-RUN yarn install --production=true
-
-
-# Final stage for app image
-FROM base
-
-# Copy built application
-COPY --from=build /app /app
-
-# Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
-CMD [ "yarn", "run", "start" ]
+RUN chown -R node:node /opt/app
+USER node
+EXPOSE 1337
+CMD ["yarn", "start"]
