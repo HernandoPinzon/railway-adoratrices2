@@ -749,7 +749,7 @@ export interface ApiPostPost extends Schema.CollectionType {
   info: {
     singularName: 'post';
     pluralName: 'posts';
-    displayName: 'Post';
+    displayName: 'Noticias y novedades';
     description: '';
   };
   options: {
