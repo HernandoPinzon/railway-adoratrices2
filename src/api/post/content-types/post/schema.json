@@ -20,6 +20,9 @@
     },
     "image": {
       "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
     }
   }
 }
