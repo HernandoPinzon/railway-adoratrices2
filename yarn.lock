@@ -817,10 +817,10 @@
   resolved "https://registry.npmjs.org/@floating-ui/utils/-/utils-0.1.6.tgz"
   integrity sha512-OfX7E2oUDYxtBvsuS4e/jSn4Q9Qb6DzgeYtsAdkPZ47znpoNsMgZw0+tVijiv3uGNR6dgNlty6r9rzIzHjtd/A==
 
-"@flydotio/dockerfile@^0.4.10":
-  version "0.4.10"
-  resolved "https://registry.npmjs.org/@flydotio/dockerfile/-/dockerfile-0.4.10.tgz"
-  integrity sha512-cyxxVTzPX7qRD3/yq24eiIsSKlUFPcBjbIQmWeuXn3qS2rSdYMioUmDISchfGE7S75cEdL/baK0AJP2q7+aw6w==
+"@flydotio/dockerfile@^0.5.2":
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/@flydotio/dockerfile/-/dockerfile-0.5.2.tgz#5f97da9a4e5d6775b1d63b3d6d32e9e0538d5af8"
+  integrity sha512-2IQ32c6Eeag1gUD35wNLfdJw7CK1HanwESQKBkHdVjsT1eakMFgP/9QJ7a88QkfPBmzQFU2yNci/bxQZBpAucw==
   dependencies:
     chalk "^5.3.0"
     diff "^5.1.0"
