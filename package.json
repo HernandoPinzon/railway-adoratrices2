@@ -10,7 +10,7 @@
     "strapi": "strapi"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.4.10"
+    "@flydotio/dockerfile": "^0.5.4"
   },
   "dependencies": {
     "@strapi/plugin-i18n": "4.15.5",
